@@ -4,7 +4,6 @@
   "description": "bit-bundler plugin for initializing source maps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
