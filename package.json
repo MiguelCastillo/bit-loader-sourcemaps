@@ -1,6 +1,6 @@
 {
   "name": "bit-loader-sourcemaps",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "bit-bundler plugin for initializing source maps",
   "main": "index.js",
   "scripts": {},
