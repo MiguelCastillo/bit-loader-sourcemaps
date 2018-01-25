@@ -5,11 +5,25 @@ function configureInlineSourceMap(options) {
     pretransform: Object.assign({
       extensions: ["js", "jsx", "mjs"],
       handler: (meta) => {
-        if (meta.source) {
-          return {
-            source: meta.source + "\n" + inlineSourceMap().addGeneratedMappings(meta.filename, meta.source).addSourceContent(meta.filename, meta.source).inlineMappingUrl()
-          };
+        const source = meta.source;
+
+        if (!source) {
+          return;
         }
+
+        const filename = meta.filename || meta.path || "$anonymous";
+
+        const smString = (
+          inlineSourceMap()
+            .addGeneratedMappings(filename, meta.source)
+            .addSourceContent(filename, meta.source)
+            .inlineMappingUrl()
+        );
+
+        return {
+          filename: filename,
+          source: meta.source + "\n" + smString
+        };
       }
     }, options)
   };
