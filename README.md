@@ -12,9 +12,9 @@ The example below illustrates how `bit-loader-sourcemaps` generates source maps 
 ``` javascript
 module.exports = {
   loader: [
-    "bit-loader-sourcemaps",
-    "bit-loader-babel",
-    "bit-loader-builtins"
+    "@bit/loader-sourcemaps",
+    "@bit/loader-babel",
+    "@bit/loader-builtins"
   ]
 };
 ```
